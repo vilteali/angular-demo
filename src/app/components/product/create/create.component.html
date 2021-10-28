@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center">
+            <div class="btn-return position-absolute top-0 start-0">
+                <button class="btn btn-secondary btn-md" routerLink="/"><i class="fas fa-arrow-left"></i> Return</button>
+            </div>
+            Create Product
+        </div>
+        <div class="card-body">
+        <form [formGroup]="createProductForm" (ngSubmit)="createProduct()">
+            <div class="row justify-content-center">
+                <div class="form-group col-md-6 " >
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name">
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="form-group col-md-6">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" formControlName="price">
+                </div>
+            </div>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="submit" class="btn btn-primary btn-md" [disabled]="!createProductForm.valid">Submit</button>
+                <button type="reset" class="btn btn-secondary btn-md">Clear</button>
+            </div>
+        </form>
+        </div>
+    </div>
+  </div>
